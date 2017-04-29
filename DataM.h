@@ -16,6 +16,5 @@ public:
 	std::unordered_map<std::string, std::pair<std::string, std::string>> mymap;
 	const int NUMLINES = 395;
 	DataM();
-	//void leerArchivo(std::string a[], int size);
 	~DataM();
 };
