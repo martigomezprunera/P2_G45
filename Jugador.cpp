@@ -59,3 +59,12 @@ std::string Jugador::getStringElement(int num)
 {
 	return inventario[num];
 }
+
+void Jugador::seeElementsInv()
+{
+	std::cout << "Your have this elements: " << std::endl;
+	for (int i = 0; i < inventario.size(); i++)
+	{
+		std::cout << i + 1 << ".-  " << inventario[i] << std::endl;
+	}
+}

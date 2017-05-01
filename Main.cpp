@@ -1,9 +1,9 @@
 #include <fstream>
-#include "DataM.h"
 #include <iostream> 
 #include <string>
 #include <fstream>
 #include <unordered_map>
+#include <conio.h>
 #include "Comandos.h"
 #include "Jugador.h"
 #include "DataM.h"
@@ -21,7 +21,9 @@ enum class COMANDOS {
 int main()
 
 {
-
+	char c;
+	std::string input;
+	std::string input2;
 	std::string url_elements("elements.dat");
 	std::unordered_map<std::string, COMANDOS> comandos;
 
@@ -51,8 +53,49 @@ int main()
 	Jugador jug;
 	Comandos com(data, jug);
 
-	std::cout << "Your current score is: " << jug.getScore() << std::endl;
-	std::cout << "Your have this elements: " << jug.getScore() << std::endl;
+	while (true) {
+
+		c = getch();
+		if (c == 27)
+			break;
+
+		std::cout << "Your current score is: " << jug.getScore() << std::endl;
+
+		jug.seeElementsInv();
+		std::cin >> input;
+
+		if (input == "add basics")
+		{
+			jug.addBasics();
+		}
+		else if (input == "add")
+		{
+			std::cout << "Put the number of the element: " << std::endl;
+			std::cin >> input2;
+			jug.add(std::stoi(input2) - 1);
+		}
+		else if (input == "delete")
+		{
+			std::cout << "Put the number of the element: " << std::endl;
+			std::cin >> input2;
+			jug.Delete(std::stoi(input2) - 1);
+		}
+		else if (input == "info")
+		{
+			com.info(jug.Delete(std::stoi(input2) - 1);
+		}
+		else if (input == "clean") {
+			com.clean();
+		}
+		else if (input == "help")
+		{
+			com.help();
+		}
+		else if (input == "sort")
+		{
+			com.sort();
+		}
+	}
 
 
 
