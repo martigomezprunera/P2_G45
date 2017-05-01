@@ -1,4 +1,3 @@
-
 #include "DataM.h"
 #include <fstream>
 #include <iostream> 
@@ -8,7 +7,7 @@
 
 
 
-DataM::DataM()
+DataM::DataM(std::string URL)
 {
 	size_t pos;
 	size_t pos1;
@@ -17,10 +16,17 @@ DataM::DataM()
 	int counter = 0;
 	std::string palabras[3];
 
-	std::ifstream archivo("elements.dat");
+	std::ifstream fichero;
 	std::string aux;
 
-	while (std::getline(archivo, aux))
+	fichero.open(URL);
+
+	if (fichero.fail())
+	{
+		system("pause");
+	}
+
+	while (std::getline(fichero, aux))
 	{
 
 		igual = aux.find("=");
@@ -34,6 +40,8 @@ DataM::DataM()
 
 
 	}
+
+	fichero.close();
 }
 DataM::~DataM()
 {

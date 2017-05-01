@@ -1,14 +1,11 @@
 #include "Jugador.h"
 
-
-
 Jugador::Jugador() :
 	score(0),
 	inventario({ "Air", "Earth", "Fire", "Water" })
 	
 {
 }
-
 
 Jugador::~Jugador()
 {

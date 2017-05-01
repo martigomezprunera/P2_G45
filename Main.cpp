@@ -4,8 +4,11 @@
 #include <string>
 #include <fstream>
 #include <unordered_map>
+#include "Comandos.h"
+#include "Jugador.h"
+#include "DataM.h"
 
-enum class PALABRA {
+enum class COMANDOS {
 	ADD,
 	DEL,
 	INFO,
@@ -19,10 +22,15 @@ int main()
 
 {
 
+	std::string url_elements("elements.dat");
+	std::unordered_map<std::string, COMANDOS> comandos;
 
-	std::unordered_map<std::string, std::pair<std::string, std::string>> playerMap;
-	DataM mapa;
-	DataM();
+	comandos["add"] = COMANDOS::ADD;
+	comandos["delete"] = COMANDOS::DEL;
+	comandos["info"] = COMANDOS::INFO;
+	comandos["clean"] = COMANDOS::CLEAN;
+	comandos["help"] = COMANDOS::HELP;
+	comandos["sort"] = COMANDOS::SORT;
 
 	std::cout << "-------------------" << std::endl;
 	std::cout << "FULLENTI ALCCHEMIST" << std::endl;
@@ -38,11 +46,13 @@ int main()
 	system("pause");
 	system("cls");
 
+	//CREAMOS LAS CLASES QUE NECESITAMOS
+	DataM data(url_elements);
+	Jugador jug;
+	Comandos com(data, jug);
 
-	for (auto it =playerMap.begin(); it != playerMap.end(); ++it)
-	{
-		std::cout << it->first << '=' << it->second.first << '+' << it->second.second << std::endl;
-	}
+	std::cout << "Your current score is: " << jug.getScore() << std::endl;
+	std::cout << "Your have this elements: " << jug.getScore() << std::endl;
 
 
 

@@ -146,13 +146,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Comandos.h" />
     <ClInclude Include="DataM.h" />
     <ClInclude Include="Jugador.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Comandos.cpp" />
     <ClCompile Include="DataM.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\P2_G45\elements.dat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
