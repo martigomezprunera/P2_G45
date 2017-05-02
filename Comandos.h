@@ -13,8 +13,6 @@ public:
 
 	void info(int element);							//METOTO PARA INFORMACION DE UN ELEMENTO
 	void help();									//METODO PARA AYUDA(COMANDOS)
-	void sort();									//METODO PARA ORDENAR LOS ELEMENTOS DEL INVENTARIO
-	void clean();									//METODO PARA ELIMINAR TODOS LOS ELEMENTOS DEL INVENTARIO
 
 private:
 	DataM &dataA;

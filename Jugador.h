@@ -2,6 +2,9 @@
 #include <vector>
 #include <string>
 #include <iostream>​
+#include <algorithm>
+#include <windows.h>
+#include <set>
 
 class Jugador
 {
@@ -25,5 +28,7 @@ public:
 	void modListaJugador(std::string);				//Metodo para modificar la lista de elementos descubiertos del jugador
 	std::vector<std::string> getListaJugador();		//Metodo para recoger la lista del jugador
 	std::string getStringElement(int);				//Consultar elemento con su numero
-	void seeElementsInv();							//METODO PARA PRINTAR POR PANTALLA TODOS LOS ELEMENTOS DEL JUGADOR
+	void seeElementsInv();							//Metodo para printar por pantalla todos los elementos del inventario
+	void sortElements();							//Metodo para ordenar elementos
+	void cleanElements();							//Metodo para limpiar los elementos del inventario
 };

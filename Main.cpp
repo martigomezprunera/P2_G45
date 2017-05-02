@@ -8,31 +8,14 @@
 #include "Jugador.h"
 #include "DataM.h"
 
-enum class COMANDOS {
-	ADD,
-	DEL,
-	INFO,
-	SORT,
-	CLEAN,
-	HELP,
-	MAX
-};
-
 int main()
 
 {
+	//bool flag_salida=true;
 	char c;
 	std::string input;
 	std::string input2;
 	std::string url_elements("elements.dat");
-	std::unordered_map<std::string, COMANDOS> comandos;
-
-	comandos["add"] = COMANDOS::ADD;
-	comandos["delete"] = COMANDOS::DEL;
-	comandos["info"] = COMANDOS::INFO;
-	comandos["clean"] = COMANDOS::CLEAN;
-	comandos["help"] = COMANDOS::HELP;
-	comandos["sort"] = COMANDOS::SORT;
 
 	std::cout << "-------------------" << std::endl;
 	std::cout << "FULLENTI ALCCHEMIST" << std::endl;
@@ -53,26 +36,29 @@ int main()
 	Jugador jug;
 	Comandos com(data, jug);
 
-	while (true) {
-
-		c = getch();
+	while (flag_salida == true) {
+	
+		/*c = _getch();
 		if (c == 27)
-			break;
+			flag_salida = true;*/
 
 		std::cout << "Your current score is: " << jug.getScore() << std::endl;
 
 		jug.seeElementsInv();
 		std::cin >> input;
 
-		if (input == "add basics")
+		if (input == "add")
 		{
-			jug.addBasics();
-		}
-		else if (input == "add")
-		{
-			std::cout << "Put the number of the element: " << std::endl;
+			std::cout << "Basics or put the number of the element: " << std::endl;
 			std::cin >> input2;
-			jug.add(std::stoi(input2) - 1);
+			if (input2 == "basics" || input2 == "Basics")
+			{
+				jug.addBasics();
+			}
+			else
+			{
+				jug.add(std::stoi(input2) - 1);
+			}
 		}
 		else if (input == "delete")
 		{
@@ -85,7 +71,8 @@ int main()
 			com.info(std::stoi(input2) - 1);
 		}
 		else if (input == "clean") {
-			com.clean();
+			//com.clean();
+			jug.cleanElements();
 		}
 		else if (input == "help")
 		{
@@ -93,10 +80,9 @@ int main()
 		}
 		else if (input == "sort")
 		{
-			com.sort();
+			//com.sort();
+			jug.sortElements();
 		}
+		system("cls");
 	}
-
-
-
 }

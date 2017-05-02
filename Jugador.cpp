@@ -3,7 +3,6 @@
 Jugador::Jugador() :
 	score(0),
 	inventario({ "Air", "Earth", "Fire", "Water" })
-	
 {
 }
 
@@ -67,4 +66,15 @@ void Jugador::seeElementsInv()
 	{
 		std::cout << i + 1 << ".-  " << inventario[i] << std::endl;
 	}
+}
+
+void Jugador::sortElements()
+{
+	std::sort(inventario.begin(), inventario.end());
+}
+
+void Jugador::cleanElements()
+{
+	sortElements();
+	inventario.erase(std::unique(inventario.begin(), inventario.end()), inventario.end());
 }
