@@ -82,7 +82,7 @@ int main()
 		}
 		else if (input == "info")
 		{
-			com.info(jug.Delete(std::stoi(input2) - 1);
+			com.info(std::stoi(input2) - 1);
 		}
 		else if (input == "clean") {
 			com.clean();
