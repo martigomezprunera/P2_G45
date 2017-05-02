@@ -14,6 +14,7 @@ public:
 	void info(int element);							//METOTO PARA INFORMACION DE UN ELEMENTO
 	void help();									//METODO PARA AYUDA(COMANDOS)
 
+	std::string getCombinationResult(std::string elem1, std::string elem2);			//METODO PARA LA CORRECTA COMBINACION DE LOS ELEMENTOS
 private:
 	DataM &dataA;
 	Jugador &jugA;
