@@ -127,7 +127,7 @@ int main()
 						jug.Delete(user_Input_ELEMENT2);
 					}
 
-					jug.inventario.push_back(element3);
+					jug.getInv().push_back(element3);
 					//jug.add(std::stoi(user_Input_ELEMENT3));			//NO ENTENDEMOS POR QUE NO SALTA ERROR (NOS INDICA QUE NOS DIRECCIONAMOS A UNA DIRECCION QUE NO EXISTE)
 
 					//AUMENTAMOS LA SCORE DEL JUGADOR
