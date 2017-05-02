@@ -36,7 +36,7 @@ int main()
 	Jugador jug;
 	Comandos com(data, jug);
 
-	while (flag_salida == true) {
+	while (true) {
 	
 		/*c = _getch();
 		if (c == 27)
